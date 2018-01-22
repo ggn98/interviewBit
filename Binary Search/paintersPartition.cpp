@@ -5,7 +5,7 @@ bool isValid(vector<int> &A,int mid,int K,int L)
     {
         if(count+A[i]>mid)
         {
-            count=(long long)A[i];;
+            count=A[i];;
             painters++;
             if(painters>K)
             return false;
