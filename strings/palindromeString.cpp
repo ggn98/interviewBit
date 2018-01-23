@@ -29,17 +29,6 @@ int Solution::isPalindrome(string A)
                 return 0;
             }
         }
-        else 
-        {
-            if(isAlphaNum(A[start])==false)
-            {
-                 start++;
-            }
-        if(isAlphaNum(A[end])==false)
-            {
-                end--;
-            }
-        }
     }
     return 1;
 }
