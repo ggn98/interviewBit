@@ -23,11 +23,11 @@ string Solution::longestCommonPrefix(vector<string> &A)
         }
         if(k!=A.size())
         {
-            return result; // will reach here , even when 1 of the strings in vector does not have , same iTh char as that of input
+            return result; // will reach here , even when 1 of the strings in vector does not have , same iTh char as that of smallest
         }
         else
         {
-            result+=smallest[i]; //add ith to result when all the strings in the vector , have same ith character
+            result+=smallest[i]; //add ith char of smallest string to result , when all the strings in the vector , have same ith character
         }
     }
 }
