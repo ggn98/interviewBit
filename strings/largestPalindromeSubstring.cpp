@@ -29,11 +29,6 @@ string Solution::longestPalindrome(string A)
             high++;
         }
     }
-    if(maxLength==1) //return 1st char if no palindrome
-    {
-        string result(1,A[0]);
-        return result;
-    }
     string result;
     result=A.substr(start,maxLength);
     return result;
