@@ -15,14 +15,15 @@ ListNode* Solution::deleteDuplicates(ListNode* head)
     while(current!=NULL)
     {
         while(current->next!=NULL&& current->next->val==current->val )
-            current=current->next;
+            current=current->next; //hence current holds the last repeated element of a number
+        //if no duplicates , then next lement of previous is current , hence we update previous to current
         if(prev->next==current)
             prev=prev->next;
         else
         {
-            prev->next=current->next;
+            prev->next=current->next; //since current repeats , and current presently have last repeated node of a given no hence the next element of curr is pointed by prev
         }
-        current=current->next;
+        current=current->next; // update the currrent element with each iteration
     }
     head=dummy->next;
     return head;
