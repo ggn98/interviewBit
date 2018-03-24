@@ -31,7 +31,7 @@ ListNode* Solution::reverseBetween(ListNode* head, int start, int end)
 }
 /* What we do is we push the elements in front each time so that after required no of operations that portion
 is reversed . ex -> 1->2->3->4->5->6->7 , if we want to reverse the portion from 3 to 5 , then what we do is 
-we first make 4 before 3 and then 5 before 5 , so that we reverse the portion
+we first make 4 before 3 and then 5 before 4 , so that we reverse the portion
 Hence no of operations required will be End-Start , ex-5-3=2
 we require 2 forward push of 4 and then 5.
 Now dummy head , what if we want to reverse 1 to 4 ,then in that case our head would change , 
