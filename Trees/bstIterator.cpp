@@ -10,7 +10,7 @@
 stack<TreeNode *> path;
 void push(TreeNode* root)
 {
-    while(root)
+    while(root) //PUSH THE ROOT AND ALL ITS LEFT CHILD  , IF ROOT IS NULL THEN NO NEW ADDITION IN STACK
     {
         path.push(root);
         root=root->left;
@@ -27,7 +27,12 @@ bool BSTIterator::hasNext() {
 
 /** @return the next smallest number */
 int BSTIterator::next() {
-    TreeNode* temp=path.top();
+    TreeNode* temp=path.top(); 
+    //THIS WILL GET THE SMALLEST ELEMENT
+    //NOW THE NEXT SMALLER ELEMENT WILL BE THE LEFTEST ELEMENT 
+    //OF THE RIGHT SUBTREE OF THIS NODE
+    //THIS IS LIKE ROOT , LEFT PART IS ALREADY POPPED OUT AND NOW THE ROOT IS POPPED OUT
+    //NOW THE NEXT SMALLER ELEMENT AFTER THIS NODE IS THE LEFTEST ELEMENT OF RIGHT SUBTREE
     path.pop();
     push(temp->right);
     return temp->val;
