@@ -7,20 +7,23 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
-void inOrderTraversal(TreeNode* root,vector<int> &inorder)
+void inOrderTraversal(TreeNode* root,int k,int &count,int &ans)
 {
     if(root==NULL)
         return ;
-    inOrderTraversal(root->left,inorder);
-    inorder.push_back(root->val);
-    inOrderTraversal(root->right,inorder);
+    inOrderTraversal(root->left,k,count,ans);
+    count++;
+    //each time an element is hot during inorder traversal we incremement the count
+    //if count becomes equal to k then it means this is the required element
+    if(count==k)
+    {
+        ans=root->val;
+        return ;
+    }
+    inOrderTraversal(root->right,k,count,ans);
 }
 int Solution::kthsmallest(TreeNode* root, int k) {
-    vector<int> inorder;
-    inOrderTraversal(root,inorder);
-    for(int i=0;i<inorder.size();i++)
-    {
-        if(i==k-1)
-            return inorder[i];
-    }
+    int count=0,ans;
+    inOrderTraversal(root,k,count,ans);
+    return ans;
 }
